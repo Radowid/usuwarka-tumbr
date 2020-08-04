@@ -1,0 +1,11 @@
+/*
+Navitage to your mass post editor:
+https://www.tumblr.com/mega-editor/[blog-name]
+Open your browser's JavaScript Console and paste either of the following code snippets
+*/
+
+// delete 100 tumblr posts at a time (h/t Louis Lee: http://louisrli.github.io/blog/2013/05/11/how-to-delete-all-tumblr-posts/)
+javascript:$('.overlay').slice(0, 100).click(); // you must now manually hit the 'delete' button at the top-right of the page
+
+// delete all tumblr posts (h/t Hendry Sadrak [@hendrysadrak] a commenter on Li's above-linked post)
+javascript:function z(){var a=$(".overlay");console.log("Overlays: "+a.length);250>a.length&&$(window).scrollTop($(document).height());a.slice(0,100).click();$("#nav_archive > div.editor_navigation > div:nth-child(1)").click()}window.alert=console.log.bind(console);window.confirm=function(a){return console.log(a),!0};z();setInterval(z,3E3);
